@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>UpTrader Test | {% block title %} title {% endblock title %}</title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
+    {% block head_cons %}
+    {% endblock %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">UpTrader-Test-Task</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<header class="bg-primary text-white">
+    <div class="container text-center">
+        <h1>{% block sub_title %} title {% endblock sub_title %}</h1>
+    </div>
+</header>
+
+<section id="about" class="bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                {% block content %}
+                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<!--
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+</footer>
+-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script>
+    /* menu active item detector */
+    let current_path = '{{ request.path }}';
+    let link_nodes = document.querySelectorAll('a');
+
+    for (let i = 0; i < link_nodes.length; i++) {
+      if (current_path == link_nodes[i].getAttribute('href')) {
+        link_nodes[i].setAttribute('class', 'active-link')
+      }
+    }
+</script>
+{% block js_cons %}
+{% endblock %}

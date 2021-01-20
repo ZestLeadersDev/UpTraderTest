@@ -1,0 +1,27 @@
+<h5>{{ menu_label }}</h5>
+<ul class="ml-side-menu list-group">
+    {% for item in menu_items %}
+        <li class="list-group-item">
+            <span class="caret">
+                {% if item.is_named_url %}
+                    <a href="{% url item.url %}">{{ item.label }}</a>
+                {% else %}
+                    <a href="{{ item.url }}">{{ item.label }}</a>
+                {% endif %}
+            </span>
+            <ul class="nested list-group active mt-2">
+            {% for sub_item in menu_sub_items %}
+                {% if sub_item.parent_item == item %}
+                    <li class="list-group-item">
+                        {% if sub_item.is_named_url %}
+                            <a href="{% url sub_item.url %}">{{ sub_item.label }}</a>
+                        {% else %}
+                            <a href="{{ sub_item.url }}">{{ sub_item.label }}</a>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,45 @@
+header {
+  padding: 156px 0 100px;
+}
+
+section {
+  padding: 150px 0;
+}
+
+a {
+  color: #ffffff;
+}
+
+.active-link {
+  color: #2a9fd6 !important;
+}
+
+.list-group-item {
+	background-color: #555;
+}
+
+.list-group-item:hover {
+	background-color: #424242;
+}
+
+ul, .ml-side-menu {
+  list-style-type: none;
+}
+
+.ml-side-menu {
+  margin: 0;
+  padding: 0;
+}
+
+.caret {
+  cursor: pointer;
+  user-select: none; /* Запретить выделение текста */
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
